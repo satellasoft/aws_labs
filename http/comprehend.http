@@ -1,11 +1,11 @@
 ### Amazon Comprehend 
 ## Install Name: REST Client
-Id: humao.rest-client - Marketplace Link: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+#Id: humao.rest-client - Marketplace Link: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-POST http://localhost:8000/api/comprehend/sentiment
+POST http://localhost:8000/api/sentiment
 Content-Type: application/json
 Accept: application/json
 
 {
-    "text": "Gostei muito do atendimento, o serviço foi excelente!"
+    "text": "Horrível, não gostei do produto"
 }

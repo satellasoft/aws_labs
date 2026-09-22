@@ -1,0 +1,11 @@
+### Amazon Polly
+## Install Name: REST Client
+# Id: humao.rest-client - Marketplace Link: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+POST http://localhost:8000/api/polly/synthesize
+Content-Type: application/json
+Accept: application/json
+
+{
+    "text": "Olá! Este áudio foi gerado pelo Amazon Polly."
+}

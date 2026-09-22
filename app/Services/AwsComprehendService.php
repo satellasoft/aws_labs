@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Contracts\ComprehendServiceInterface;
-use Aws\ComprehendService\ComprehendClient;
+use Aws\Comprehend\ComprehendClient;
 
 class AwsComprehendService implements ComprehendServiceInterface
 {

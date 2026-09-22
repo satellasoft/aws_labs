@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use App\Services\AwsComprehendService;
 use App\Contracts\ComprehendServiceInterface;
+use App\Contracts\PollyServiceInterface;
+use App\Services\AwsComprehendService;
+use App\Services\AwsPollyService;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             ComprehendServiceInterface::class,
             AwsComprehendService::class
+        );
+
+        $this->app->bind(
+            PollyServiceInterface::class,
+            AwsPollyService::class
         );
     }
 
