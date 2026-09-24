@@ -35,9 +35,16 @@ return [
         ],
     ],
 
-    //AWS Comprehend Configuration
     'aws' => [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+        'polly' => [
+            'engine' => 'neural',
+            'output_format' => 'mp3',
+            'voice_id' => 'Camila',
+            'text_type' => 'text',
+            'language_code' => 'pt-BR',
+            'audio_file' => 'audio/resultado.mp3',
+        ],
     ],
 
 ];

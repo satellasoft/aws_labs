@@ -7,5 +7,5 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "text": "Olá! Este áudio foi gerado pelo Amazon Polly."
+    "text": "Entre Juruá e a saudade, existe um caminho que sempre me leva até você. Ainda guardo Manaus como quem guarda um lugar especial no coração: a Lagoa Azul, a Ponta Negra, os nossos momentos e tudo aquilo que ficou depois daquele encontro. A distância hoje desenha outros caminhos, mas não apaga o que vivemos. Talvez a vida ainda esteja escrevendo nossa história, deixando algumas páginas em branco para um novo encontro, um novo abraço, um novo lugar. E se um dia nossos caminhos se cruzarem outra vez, que seja bonito como foi em Manaus, leve como nossas lembranças e especial como ainda é pensar em você."
 }

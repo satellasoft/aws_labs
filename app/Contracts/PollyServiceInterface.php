@@ -4,5 +4,5 @@ namespace App\Contracts;
 
 interface PollyServiceInterface
 {
-    public function synthesizeSpeech(string $text): void;
+    public function synthesizeSpeech(string $text): string;
 }

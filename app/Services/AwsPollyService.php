@@ -18,21 +18,23 @@ class AwsPollyService implements PollyServiceInterface
         ]);
     }
 
-    public function synthesizeSpeech(string $text): void
+    public function synthesizeSpeech(string $text): string
     {
         $result = $this->client->synthesizeSpeech([
-            'Engine' => 'neural',
-            'OutputFormat' => 'mp3',
-            'VoiceId' => 'Camila',
-            'TextType' => 'text',
-            'LanguageCode' => 'pt-BR',
+            'Engine' => config('services.aws.polly.engine'),
+            'OutputFormat' => config('services.aws.polly.output_format'),
+            'VoiceId' => config('services.aws.polly.voice_id'),
+            'TextType' => config('services.aws.polly.text_type'),
+            'LanguageCode' => config('services.aws.polly.language_code'),
             'Text' => $text,
         ]);
 
-        File::ensureDirectoryExists(resource_path('audio'));
-        File::put(
-            resource_path('audio/datadog.mp3'),
-            $result['AudioStream']->getContents()
-        );
+        $audioFile = config('services.aws.polly.audio_file');
+        $audioPath = resource_path($audioFile);
+
+        File::ensureDirectoryExists(dirname($audioPath));
+        File::put($audioPath, $result['AudioStream']->getContents());
+
+        return 'resources/'.$audioFile;
     }
 }

@@ -18,11 +18,11 @@ class PollyController extends Controller
             'text' => ['required', 'string'],
         ]);
 
-        $this->polly->synthesizeSpeech($validated['text']);
+        $audioFile = $this->polly->synthesizeSpeech($validated['text']);
 
         return response()->json([
             'success' => true,
-            'file' => 'resources/audio/datadog.mp3',
+            'file' => $audioFile,
         ]);
     }
 }
